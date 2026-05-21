@@ -1,0 +1,113 @@
+{
+  "run_timestamp": "2026-05-18T19:55:22.479993Z",
+  "inputs": {
+    "fellows": "/mnt/user-data/uploads/fellows_cohort.csv",
+    "alc": "/mnt/user-data/uploads/alc_weekly_log.csv",
+    "survey": "/mnt/user-data/uploads/reflection_survey.xlsx",
+    "employer": "/mnt/user-data/uploads/employer_engagement.csv"
+  },
+  "output_dir": "/home/claude/cleaned_final",
+  "steps": [
+    {
+      "fellows_raw_rows": 1175,
+      "ts": "2026-05-18T19:55:22.678597"
+    },
+    {
+      "alc_raw_rows": 663,
+      "ts": "2026-05-18T19:55:22.681034"
+    },
+    {
+      "survey_raw_rows": 9974,
+      "ts": "2026-05-18T19:55:23.731490"
+    },
+    {
+      "employer_raw_rows": 430,
+      "ts": "2026-05-18T19:55:23.921211"
+    },
+    {
+      "fellows_issues": [
+        "20 fully duplicate rows dropped",
+        "state names normalised to title-case",
+        "47 missing alc_code filled with UNKNOWN",
+        "5 duplicate fellow_ids \u2014 kept first occurrence"
+      ],
+      "ts": "2026-05-18T19:55:23.933013"
+    },
+    {
+      "fellows_clean_rows": 1150,
+      "ts": "2026-05-18T19:55:23.933029"
+    },
+    {
+      "alc_issues": [
+        "15 duplicate rows dropped",
+        "5 rows with week_number=99 removed (out-of-range sentinel)",
+        "20 missing alc_code filled with UNKNOWN"
+      ],
+      "ts": "2026-05-18T19:55:23.938296"
+    },
+    {
+      "alc_clean_rows": 643,
+      "ts": "2026-05-18T19:55:23.938308"
+    },
+    {
+      "survey_issues": [
+        "30 duplicate fellow_id+week rows \u2014 kept first response",
+        "phone: 9944/9944 standardised to 234XXXXXXXXXX"
+      ],
+      "ts": "2026-05-18T19:55:23.992614"
+    },
+    {
+      "survey_clean_rows": 9944,
+      "ts": "2026-05-18T19:55:23.992633"
+    },
+    {
+      "employer_issues": [
+        "5 duplicate rows dropped",
+        "22 missing alc_code filled with UNKNOWN"
+      ],
+      "ts": "2026-05-18T19:55:23.996725"
+    },
+    {
+      "employer_clean_rows": 425,
+      "ts": "2026-05-18T19:55:23.996740"
+    },
+    {
+      "dedup_issues": [
+        "fellows: 1150 \u2192 1150 after full dedup"
+      ],
+      "ts": "2026-05-18T19:55:24.014454"
+    },
+    {
+      "fellows_final_rows": 1150,
+      "ts": "2026-05-18T19:55:24.014473"
+    }
+  ],
+  "rows_in": {
+    "fellows": 1175,
+    "alc": 663,
+    "survey": 9974,
+    "employer": 430
+  },
+  "rows_out": {
+    "fellows": 1150,
+    "alc": 643,
+    "survey": 9944,
+    "employer": 425
+  },
+  "issues_summary": [
+    "20 fully duplicate rows dropped",
+    "state names normalised to title-case",
+    "47 missing alc_code filled with UNKNOWN",
+    "5 duplicate fellow_ids \u2014 kept first occurrence",
+    "15 duplicate rows dropped",
+    "5 rows with week_number=99 removed (out-of-range sentinel)",
+    "20 missing alc_code filled with UNKNOWN",
+    "30 duplicate fellow_id+week rows \u2014 kept first response",
+    "phone: 9944/9944 standardised to 234XXXXXXXXXX",
+    "5 duplicate rows dropped",
+    "22 missing alc_code filled with UNKNOWN",
+    "fellows: 1150 \u2192 1150 after full dedup"
+  ],
+  "status": "SUCCESS",
+  "processing_time_seconds": 1.6
+}
